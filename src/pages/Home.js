@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import map from "../assets/images/map.png";
 import searchBtn from "../assets/images/search.svg";
-//import noImage from "../assets/images/no-image.png";
+import noImage from "../assets/images/no-image.png";
 import Product from "./Product";
 
 const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";

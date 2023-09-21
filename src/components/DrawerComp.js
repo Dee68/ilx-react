@@ -20,7 +20,6 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
-import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import axios from "axios";
 
 const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";

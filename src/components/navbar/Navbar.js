@@ -15,10 +15,8 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-//import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styled from "@emotion/styled";
-//import MenuIcon from "@mui/icons-material/Menu";
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 import axios from "axios";
@@ -125,29 +123,7 @@ const Navbar = () => {
                   OLx
                 </Typography>
               </Box>
-              {/* <Box flex={1} sx={{ gap: 2 }}>
-                <span style={{ cursor: "pointer" }}>Ukr</span> |{" "}
-                <span style={{ cursor: "pointer" }}>Eng</span>
-              </Box> */}
-              {/* <Box
-                flex={1}
-                // sx={{ display: { xs: "none", sm: "none", md: "flex" } }}
-              >
-                <Button
-                  variant="outlined"
-                  sx={{
-                    backgroundColor: "transparent",
-                    color: "#feb55f",
-                    cursor: "pointer",
-                  }}
-                  disabled={!GlobalState.userIsLoggedIn}
-                  onClick={() =>
-                    navigate(`/user/${GlobalState.userId}/wishlist/`)
-                  }
-                >
-                  <FavoriteBorderIcon />
-                </Button>
-              </Box> */}
+
               {GlobalState.userIsLoggedIn ? (
                 <Box
                   flex={1}

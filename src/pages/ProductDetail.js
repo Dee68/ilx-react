@@ -12,10 +12,10 @@ import {
   Divider,
   Snackbar,
   Alert,
-  Container,
-  useTheme,
-  useMediaQuery,
-  Box,
+  //Container,
+  //useTheme,
+  //useMediaQuery,
+  //Box,
   Dialog,
 } from "@mui/material";
 import searchBtn from "../assets/images/search.svg";
