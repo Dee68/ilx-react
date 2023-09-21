@@ -14,10 +14,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import map from "../assets/images/map.png";
 import searchBtn from "../assets/images/search.svg";
-import noImage from "../assets/images/no-image.png";
+//import noImage from "../assets/images/no-image.png";
 import Product from "./Product";
 
-//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
+//const baseUrl = "http://127.0.0.1:8000/api";
 const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
   const [county, setCounty] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  //const [subcat, setSubCat] = useState("");
+  const [subcat, setSubCat] = useState("");
   const [selectedCat, setSelectedCat] = useState("");
 
   const navigate = useNavigate();
