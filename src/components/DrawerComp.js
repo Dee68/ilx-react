@@ -22,8 +22,8 @@ import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
 import axios from "axios";
 
-const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
-//const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
+//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
+const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
 
 const DrawerComp = () => {
   const [open, setOpen] = useState(false);
