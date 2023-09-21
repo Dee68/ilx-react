@@ -24,8 +24,8 @@ import Swal from "sweetalert2";
 import DrawerComp from "../DrawerComp";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
-//const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
+//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
+const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
 
 const Navbar = () => {
   const theme = useTheme();
