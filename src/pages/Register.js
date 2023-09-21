@@ -14,8 +14,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useImmerReducer } from "use-immer";
 
-const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
-//const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
+//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io";
+const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com";
 
 const Register = () => {
   const paperType = {

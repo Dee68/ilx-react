@@ -20,8 +20,8 @@ import StateContext from "../context/StateContext";
 import axios from "axios";
 
 const WishList = () => {
-  const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
-  //const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
+  //const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
+  const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
   const [wishItems, setWishItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const GlobalState = useContext(StateContext);

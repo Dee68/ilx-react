@@ -16,8 +16,8 @@ import map from "../assets/images/map.png";
 import searchBtn from "../assets/images/search.svg";
 import Product from "./Product";
 
-const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
-//const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
+//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
+const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
 
 const ProductsCategory = () => {
   const params = useParams();

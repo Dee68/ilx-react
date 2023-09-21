@@ -19,8 +19,8 @@ import DispatchContext from "../context/DispatchContext";
 import StateContext from "../context/StateContext";
 import NoImage from "../assets/images/no-image.png";
 
-const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
-//const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
+//const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
+const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
 
 const AddProduct = () => {
   const paperType = {
