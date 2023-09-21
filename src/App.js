@@ -22,6 +22,10 @@ import ProductDetail from "./pages/ProductDetail";
 import WishList from "./pages/WishList";
 import SearchItem from "./pages/SearchItem";
 import ProductsCategory from "./pages/ProductsCategory";
+import axios from "axios";
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 function App() {
   const initialState = {

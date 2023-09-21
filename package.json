@@ -2,6 +2,7 @@
   "name": "olx-front",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://ilx-3022db9b1ed6.herokuapp.com",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
