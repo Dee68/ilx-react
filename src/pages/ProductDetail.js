@@ -302,7 +302,7 @@ const ProductDetail = () => {
     setTimeout(() => {
       dispatch({ type: "openTheSnack" });
       setTimeout(() => {
-        navigate(0);
+        navigate(`/products/${params.id}/`);
       }, 2500);
     }, 2500);
     //dispatch({ type: "openTheSnack" });
