@@ -8,6 +8,17 @@ import StateContext from "../context/StateContext";
 const Product = ({ product }) => {
   const navigate = useNavigate();
   const GlobalState = useContext(StateContext);
+
+  // remove html tags from text
+  const removeTags = (str) => {
+    if (str === null || str === "") {
+      return false;
+    } else {
+      str = str.toString();
+      return str.replace(/(<([^>]+)>)/gi, "");
+    }
+  };
+
   return (
     <Card
       className="my-3 p-3 rounded"
@@ -39,7 +50,9 @@ const Product = ({ product }) => {
             {product.name}
           </Typography>
         </Card.Title>
-        <Card.Text>{product.description.substring(0, 20)}...</Card.Text>
+        <Card.Text>
+          {removeTags(product.description.substring(0, 20))}...
+        </Card.Text>
         <Card.Footer
           style={{ justifyContent: "center", alignContent: "center" }}
         >
