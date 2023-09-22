@@ -241,12 +241,16 @@ const ProductDetail = () => {
   };
 
   const result = checkWishList();
-  console.log(wishItems.map((item) => item.product));
-  console.log(
-    wishItems.some((item) => item.user === parseInt(GlobalState.userId))
-  );
-  console.log(GlobalState.userId);
-  console.log(result);
+
+  // remove html tags from text
+  const removeTags = (str) => {
+    if (str === null || str === "") {
+      return false;
+    } else {
+      str = str.toString();
+      return str.replace(/(<([^>]+)>)/gi, "");
+    }
+  };
 
   // add to wishlist
   useEffect(() => {
@@ -631,7 +635,7 @@ const ProductDetail = () => {
             <Typography variant="h5">Detail Description of product:</Typography>
             <Divider style={{ width: "100%", backgroundColor: "#feb55f" }} />
             <div style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-              <textarea
+              {/* <textarea
                 rows={5}
                 style={{
                   width: "100%",
@@ -639,9 +643,9 @@ const ProductDetail = () => {
                   border: "1px solid #feb55f",
                   marginTop: 0,
                 }}
-              >
-                {state.productInfo.description}
-              </textarea>
+              > */}
+              {removeTags(state.productInfo.description)}
+              {/* </textarea> */}
             </div>
             <div style={{ marginTop: "2rem", marginBottom: "2rem" }}>
               {state.productInfo.price}
