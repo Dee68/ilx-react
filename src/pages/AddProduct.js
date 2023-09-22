@@ -676,7 +676,7 @@ const AddProduct = () => {
                       error={state.descriptionErrors.hasErrors ? true : false}
                       onChange={handleProcedureContentChange}
                       helperText={state.descriptionErrors.errorMessage}
-                      style={{ height: "160px" }}
+                      style={{ height: "140px" }}
                     ></ReactQuill>
                   </div>
                 </Grid>
