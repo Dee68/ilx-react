@@ -18,11 +18,89 @@ import axios from "axios";
 import DispatchContext from "../context/DispatchContext";
 import StateContext from "../context/StateContext";
 import NoImage from "../assets/images/no-image.png";
+import ReactQuill from "react-quill";
+import "quill/dist/quill.snow.css";
 
 //const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
 const baseUrl = "https://ilx-3022db9b1ed6.herokuapp.com/api";
 
 const AddProduct = () => {
+  var modules = {
+    toolbar: [
+      [{ size: ["small", false, "large", "huge"] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+        { align: [] },
+      ],
+      [
+        {
+          color: [
+            "#000000",
+            "#e60000",
+            "#ff9900",
+            "#ffff00",
+            "#008a00",
+            "#0066cc",
+            "#9933ff",
+            "#ffffff",
+            "#facccc",
+            "#ffebcc",
+            "#ffffcc",
+            "#cce8cc",
+            "#cce0f5",
+            "#ebd6ff",
+            "#bbbbbb",
+            "#f06666",
+            "#ffc266",
+            "#ffff66",
+            "#66b966",
+            "#66a3e0",
+            "#c285ff",
+            "#888888",
+            "#a10000",
+            "#b26b00",
+            "#b2b200",
+            "#006100",
+            "#0047b2",
+            "#6b24b2",
+            "#444444",
+            "#5c0000",
+            "#663d00",
+            "#666600",
+            "#003700",
+            "#002966",
+            "#3d1466",
+            "custom-color",
+          ],
+        },
+      ],
+    ],
+  };
+
+  var formats = [
+    "header",
+    "height",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "color",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "align",
+    "size",
+  ];
+
   const paperType = {
     margin: "20px auto",
     padding: "30px 20px",
@@ -411,6 +489,13 @@ const AddProduct = () => {
     );
   }
 
+  const handleProcedureContentChange = (content) => {
+    dispatch({
+      type: "catchDescriptionChange",
+      descriptionChosen: content,
+    });
+  };
+
   const showSubmitBtn = () => {
     if (
       GlobalState.userIsLoggedIn &&
@@ -537,9 +622,9 @@ const AddProduct = () => {
                 <Grid
                   item
                   xs={12}
-                  sx={{ marginTop: "20px", marginBottom: "20px" }}
+                  sx={{ marginTop: "20px", marginBottom: "25px" }}
                 >
-                  <TextField
+                  {/* <TextField
                     fullWidth
                     id="filled-multiline-static"
                     label="Description"
@@ -565,7 +650,35 @@ const AddProduct = () => {
                     }
                     error={state.descriptionErrors.hasErrors ? true : false}
                     helperText={state.descriptionErrors.errorMessage}
-                  />
+                  /> */}
+                  <div style={{ display: "grid", justifyContent: "center" }}>
+                    <ReactQuill
+                      theme="snow"
+                      modules={modules}
+                      formats={formats}
+                      value={state.descriptionValue}
+                      disabled={!GlobalState.userIsLoggedIn}
+                      label="Description"
+                      name="description"
+                      placeholder="Enter a brief description of product"
+                      // onChange={(e) =>
+                      //   dispatch({
+                      //     type: "catchDescriptionChange",
+                      //     descriptionChosen: e.target.trim(),
+                      //   })
+                      // }
+                      // onBlur={(e) =>
+                      //   dispatch({
+                      //     type: "catchDescriptionErrors",
+                      //     descriptionChosen: e.target.trim(),
+                      //   })
+                      // }
+                      error={state.descriptionErrors.hasErrors ? true : false}
+                      onChange={handleProcedureContentChange}
+                      helperText={state.descriptionErrors.errorMessage}
+                      style={{ height: "160px" }}
+                    ></ReactQuill>
+                  </div>
                 </Grid>
               </Grid>
 
