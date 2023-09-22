@@ -682,7 +682,11 @@ const AddProduct = () => {
                 </Grid>
               </Grid>
 
-              <Grid container justifyContent={"space-between"}>
+              <Grid
+                container
+                justifyContent={"space-between"}
+                sx={{ marginTop: "2rem" }}
+              >
                 <Grid item xs={5}>
                   <FormControlLabel
                     control={
@@ -786,7 +790,11 @@ const AddProduct = () => {
                   </Button>
                 </Grid>
               </Grid>
-              <Grid container justifyContent={"space-between"}>
+              <Grid
+                container
+                justifyContent={"space-between"}
+                sx={{ marginTop: "2rem" }}
+              >
                 <Grid item xs={5}>
                   <TextField
                     fullWidth

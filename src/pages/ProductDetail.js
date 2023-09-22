@@ -336,7 +336,8 @@ const ProductDetail = () => {
       }
     });
   }
-
+  console.log(state.productInfo.seller);
+  console.log(GlobalState.userId);
   //console.log(state.productInfo.seller_phone_number);
   if (state.loading === true) {
     return (
