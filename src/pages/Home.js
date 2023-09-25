@@ -27,7 +27,7 @@ const Home = () => {
   const [county, setCounty] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  const [subcat, setSubCat] = useState("");
+  //const [subcat, setSubCat] = useState("");
   const [selectedCat, setSelectedCat] = useState("");
 
   const navigate = useNavigate();
