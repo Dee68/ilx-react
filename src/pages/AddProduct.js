@@ -314,9 +314,7 @@ const AddProduct = () => {
     return arr;
   }, []);
   //get categorie with no children
-  const nCategories = cats.filter(
-    (cat) => cat.parent === null && cat.status === "False"
-  );
+  const nCategories = cats.filter((cat) => cat.status === "False");
   console.log("nCategories: ", nCategories);
   //gets subcategories
   const subcategories = cats.reduce((arr, category) => {
