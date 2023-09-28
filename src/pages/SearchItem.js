@@ -100,6 +100,7 @@ const SearchItem = () => {
               variant="filled"
               placeholder="13576 applications"
               sx={{ backgroundColor: "#fff" }}
+              disabled
               // InputProps={{
               //   startAdornment: (
               //     <InputAdornment position="end">
