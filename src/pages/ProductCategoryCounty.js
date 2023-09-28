@@ -46,7 +46,7 @@ const ProductCategoryCounty = () => {
     };
   }, []);
 
-  //get products of given category
+  //get products of given category and county
   const results = products.filter(
     (product) =>
       product.product_category === params.category &&

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Grid,
   Typography,
@@ -7,7 +7,7 @@ import {
   TextField,
   InputAdornment,
   Button,
-  //   Paper,
+  Paper,
   //   Divider,
   Container,
 } from "@mui/material";
@@ -24,28 +24,10 @@ const ProductsCategory = () => {
   // const [cats, setCats] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [county, setCounty] = useState("");
 
-  //get categories from endpoint
-  //   useEffect(() => {
-  //     const source = axios.CancelToken.source();
-  //     async function GetAllcats() {
-  //       try {
-  //         await axios
-  //           .get(baseUrl + "/categories/", { cancelToken: source.token })
-  //           .then((response) => {
-  //             console.log(response.data);
-  //             setCats(response.data);
-  //             setLoading(false);
-  //           });
-  //       } catch (error) {
-  //         console.log("Response data:", error.response);
-  //       }
-  //     }
-  //     GetAllcats();
-  //     return () => {
-  //       source.cancel();
-  //     };
-  //   }, []);
+  const navigate = useNavigate();
 
   //get all products from endpoint
   useEffect(() => {
@@ -68,11 +50,57 @@ const ProductsCategory = () => {
       source.cancel();
     };
   }, []);
+
+  const counties = [
+    { name: "CORK" },
+    { name: "GALWAY" },
+    { name: "DONEGAL" },
+    { name: "MAYO" },
+    { name: "KERRY" },
+    { name: "TIPPERARY" },
+    { name: "CLARE" },
+    { name: "TYRONE" },
+    { name: "ANTRIM" },
+    { name: "LIMERICK" },
+    { name: "ROSCOMMON" },
+    { name: "DOWN" },
+    { name: "WEXFORD" },
+    { name: "MEATH" },
+    { name: "LONDONDERRY" },
+    { name: "KILKENNY" },
+    { name: "WICKLOW" },
+    { name: "OFFALY" },
+    { name: "CAVAN" },
+    { name: "WATERFORD" },
+    { name: "WESTMEATH" },
+    { name: "SLIGO" },
+    { name: "LAOIS" },
+    { name: "KILDARE" },
+    { name: "FERMANAGH" },
+    { name: "LEITRIM" },
+    { name: "ARMAGH" },
+    { name: "MONOGHAN" },
+    { name: "LONGFORD" },
+    { name: "DUBLIN" },
+    { name: "CARLOW" },
+    { name: "LOUTH" },
+  ];
+
+  const handleChange = (e) => {
+    setCounty(e.target.firstChild);
+  };
+  const handleClick = (e) => {
+    setIsOpen(!isOpen);
+  };
   //get products of given category
   const results = products.filter(
     (product) => product.product_category === params.category
   );
   console.log(results);
+
+  const handleSearch = () => {
+    navigate(`/product/${params.category}/${county}`);
+  };
 
   if (loading === true) {
     return (
@@ -123,8 +151,9 @@ const ProductsCategory = () => {
               variant="filled"
               placeholder="All of Ireland"
               name="county"
-              //value={}
-              disabled
+              value={county}
+              onChange={handleChange}
+              onClick={handleClick}
               sx={{ backgroundColor: "#fff" }}
               InputProps={{
                 startAdornment: (
@@ -138,11 +167,12 @@ const ProductsCategory = () => {
                 ),
                 endAdornment: (
                   <InputAdornment position="end">
-                    <Button variant="text" disabled>
+                    <Button variant="text">
                       <img
                         src={searchBtn}
                         alt="search button"
                         style={{ width: 40, height: 40 }}
+                        onClick={handleSearch}
                       />
                     </Button>
                   </InputAdornment>
@@ -151,7 +181,7 @@ const ProductsCategory = () => {
             ></TextField>
           </Grid>
         </Grid>
-        {/* {!isOpen ? (
+        {!isOpen ? (
           ""
         ) : (
           <Paper
@@ -195,7 +225,7 @@ const ProductsCategory = () => {
               ))}
             </Grid>
           </Paper>
-        )} */}
+        )}
       </div>
       <Grid container>
         <Grid item xs={12} align="center">
