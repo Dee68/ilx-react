@@ -166,13 +166,6 @@ const Home = () => {
     navigate(`/product/${e.target.textContent.trim()}/`);
   };
 
-  // const showSearch = (e) => {
-  //   setSearchItem(e.target.value);
-  //   console.log(searchItem);
-  //   //console.log(e.target.text);
-  //   // console.log(e)
-  // };
-
   return (
     <>
       <div className="gridline">
@@ -182,7 +175,10 @@ const Home = () => {
               fullWidth
               variant="filled"
               placeholder="13576 applications"
-              sx={{ backgroundColor: "#fff" }}
+              sx={{
+                backgroundColor: "#fff",
+                fontSize: { xs: "50%", sm: "60%", md: "100%" },
+              }}
               value={searchItem}
               onChange={(e) => setSearchItem(e.target.value)}
               //onClick={showSearch}
@@ -214,7 +210,10 @@ const Home = () => {
               value={county}
               onChange={handleChange}
               onClick={handleClick}
-              sx={{ backgroundColor: "#fff" }}
+              sx={{
+                backgroundColor: "#fff",
+                fontSize: { xs: "50%", sm: "60%", md: "100%" },
+              }}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -272,6 +271,7 @@ const Home = () => {
                       variant="body2"
                       sx={{
                         "&:hover": { backgroundColor: "#feb55f" },
+                        fontSize: { xs: "50%", sm: "60%", md: "100%" },
                       }}
                       onClick={(e) => {
                         setIsOpen(!isOpen);
