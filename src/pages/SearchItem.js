@@ -25,28 +25,6 @@ const SearchItem = () => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
 
-  //get categories from endpoint
-  //   useEffect(() => {
-  //     const source = axios.CancelToken.source();
-  //     async function GetAllcats() {
-  //       try {
-  //         await axios
-  //           .get(baseUrl + "/categories/", { cancelToken: source.token })
-  //           .then((response) => {
-  //             console.log(response.data);
-  //             setCats(response.data);
-  //             setLoading(false);
-  //           });
-  //       } catch (error) {
-  //         console.log("Response data:", error.response);
-  //       }
-  //     }
-  //     GetAllcats();
-  //     return () => {
-  //       source.cancel();
-  //     };
-  //   }, []);
-
   //get all products from endpoint
   useEffect(() => {
     const source = axios.CancelToken.source();

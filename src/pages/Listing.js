@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   Grid,
@@ -7,11 +7,11 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import reactImg from "../assets/images/rect_image.jpg";
 import axios from "axios";
 import { useImmerReducer } from "use-immer";
-import StateContext from "../context/StateContext";
+//import StateContext from "../context/StateContext";
 import { locations } from "../data/location";
 
 //const baseUrl = "https://8000-dee68-ilx-m1qv6b8vv9s.ws-eu104.gitpod.io/api";
