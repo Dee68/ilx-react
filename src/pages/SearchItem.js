@@ -259,7 +259,10 @@ const SearchItem = () => {
                 marginBottom: "25px",
               }}
             >
-              {params.county.toUpperCase()} - APPLICATIONS
+              {params.county === "counties"
+                ? params.item.toUpperCase()
+                : params.county.toUpperCase()}{" "}
+              - APPLICATIONS
             </Typography>
           </Grid>
           {results ? (
