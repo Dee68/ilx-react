@@ -166,12 +166,12 @@ const Home = () => {
     navigate(`/product/${e.target.textContent.trim()}/`);
   };
 
-  const showSearch = (e) => {
-    setSearchItem(e.target.value);
-    console.log(searchItem);
-    //console.log(e.target.text);
-    // console.log(e)
-  };
+  // const showSearch = (e) => {
+  //   setSearchItem(e.target.value);
+  //   console.log(searchItem);
+  //   //console.log(e.target.text);
+  //   // console.log(e)
+  // };
 
   return (
     <>
@@ -185,24 +185,24 @@ const Home = () => {
               sx={{ backgroundColor: "#fff" }}
               value={searchItem}
               onChange={(e) => setSearchItem(e.target.value)}
-              onClick={showSearch}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="end">
-                    <Button variant="text">
-                      <img
-                        src={searchBtn}
-                        alt="search button"
-                        style={{
-                          width: 40,
-                          height: 40,
-                          backgroundColor: "transparent",
-                        }}
-                      />
-                    </Button>
-                  </InputAdornment>
-                ),
-              }}
+              //onClick={showSearch}
+              // InputProps={{
+              //   startAdornment: (
+              //     <InputAdornment position="end">
+              //       <Button variant="text">
+              //         <img
+              //           src={searchBtn}
+              //           alt="search button"
+              //           style={{
+              //             width: 40,
+              //             height: 40,
+              //             backgroundColor: "transparent",
+              //           }}
+              //         />
+              //       </Button>
+              //     </InputAdornment>
+              //   ),
+              // }}
             />
           </Grid>
           <Grid item xs={6}>

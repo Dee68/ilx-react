@@ -122,23 +122,23 @@ const SearchItem = () => {
               variant="filled"
               placeholder="13576 applications"
               sx={{ backgroundColor: "#fff" }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="end">
-                    <Button variant="text">
-                      <img
-                        src={searchBtn}
-                        alt="search button"
-                        style={{
-                          width: 40,
-                          height: 40,
-                          backgroundColor: "transparent",
-                        }}
-                      />
-                    </Button>
-                  </InputAdornment>
-                ),
-              }}
+              // InputProps={{
+              //   startAdornment: (
+              //     <InputAdornment position="end">
+              //       <Button variant="text">
+              //         <img
+              //           src={searchBtn}
+              //           alt="search button"
+              //           style={{
+              //             width: 40,
+              //             height: 40,
+              //             backgroundColor: "transparent",
+              //           }}
+              //         />
+              //       </Button>
+              //     </InputAdornment>
+              //   ),
+              // }}
             />
           </Grid>
           <Grid item xs={6}>
