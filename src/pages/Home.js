@@ -27,7 +27,7 @@ const Home = () => {
   const [county, setCounty] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  //const [subcat, setSubCat] = useState("");
+  const [searchItem, setSearchItem] = useState("");
   const [selectedCat, setSelectedCat] = useState("");
 
   const navigate = useNavigate();
@@ -149,12 +149,27 @@ const Home = () => {
   };
 
   const handleSearch = () => {
-    navigate(`/search/${county.toLowerCase()}/`);
+    if (searchItem !== "") {
+      navigate(`/search/${county.toLowerCase()}/${searchItem}`);
+    } else {
+      navigate(`/search/${county.toLowerCase()}/item`);
+    }
+    if (county === "") {
+      navigate(`/search/counties/${searchItem}`);
+    } else {
+      navigate(0);
+    }
   };
 
   const showCategory = (e) => {
-    //console.log(e.target.textContent);
     navigate(`/product/${e.target.textContent.trim()}/`);
+  };
+
+  const showSearch = (e) => {
+    setSearchItem(e.target.value);
+    console.log(searchItem);
+    //console.log(e.target.text);
+    // console.log(e)
   };
 
   return (
@@ -167,6 +182,9 @@ const Home = () => {
               variant="filled"
               placeholder="13576 applications"
               sx={{ backgroundColor: "#fff" }}
+              value={searchItem}
+              onChange={(e) => setSearchItem(e.target.value)}
+              onClick={showSearch}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="end">

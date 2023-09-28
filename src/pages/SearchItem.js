@@ -69,11 +69,35 @@ const SearchItem = () => {
     };
   }, []);
 
-  const results = products.filter(
-    (product) => product.seller_county === params.county.toUpperCase()
-  );
+  // get products depending on search parameters
+  function getResults() {
+    let results = "";
+    if (params.county !== "" && params.item !== "") {
+      results = products.filter(
+        (product) =>
+          product.seller_county === params.county.toUpperCase() &&
+          params.item.toLowerCase() === product.name.toLowerCase()
+      );
+    }
+    if (params.item === "" || params.item === "item") {
+      results = products.filter(
+        (product) =>
+          product.seller_county.toLowerCase() === params.county.toLowerCase()
+      );
+      //console.log(results);
+    }
+    if (params.county === "" || params.county === "counties") {
+      results = products.filter(
+        (product) =>
+          product.name.toLowerCase().includes(params.item.toLowerCase()) ||
+          params.item.toLowerCase() === product.name.toLowerCase()
+      );
+      //console.log(results);
+    }
+    return results;
+  }
 
-  console.log(results);
+  const results = getResults();
 
   if (loading === true) {
     return (
