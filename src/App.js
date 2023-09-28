@@ -96,7 +96,11 @@ function App() {
             <Route exact path="/add-product" Component={AddProduct} />
             <Route exact path="/products/:id" Component={ProductDetail} />
             <Route exact path="/user/:id/wishlist/" Component={WishList} />
-            <Route exact path="/search/:county/" Component={SearchItem} />
+            <Route
+              exact
+              path={`/search/:county/:item`}
+              Component={SearchItem}
+            />
             <Route
               exact
               path="/product/:category/"

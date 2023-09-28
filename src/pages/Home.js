@@ -156,8 +156,9 @@ const Home = () => {
     }
     if (county === "") {
       navigate(`/search/counties/${searchItem}`);
-    } else {
-      navigate(0);
+    }
+    if (searchItem === "" && county === "") {
+      navigate("/");
     }
   };
 
