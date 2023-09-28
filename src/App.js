@@ -22,6 +22,7 @@ import ProductDetail from "./pages/ProductDetail";
 import WishList from "./pages/WishList";
 import SearchItem from "./pages/SearchItem";
 import ProductsCategory from "./pages/ProductsCategory";
+import ProductCategoryCounty from "./pages/ProductCategoryCounty";
 import axios from "axios";
 
 axios.defaults.xsrfCookieName = "csrftoken";
@@ -105,6 +106,11 @@ function App() {
               exact
               path="/product/:category/"
               Component={ProductsCategory}
+            />
+            <Route
+              exact
+              path={`/product/:category/:county`}
+              Component={ProductCategoryCounty}
             />
             <Route
               exact
