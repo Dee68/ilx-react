@@ -299,7 +299,7 @@ const Home = () => {
       <Grid align="center" container spacing={5} marginTop="55px">
         {cats.map((cat, index) => {
           return (
-            <Grid item sx={{ cursor: "pointer" }} xs={2} key={index}>
+            <Grid item xs={2} key={index}>
               <div>
                 <img
                   src={cat.image}
@@ -309,6 +309,7 @@ const Home = () => {
                 />
                 <Typography
                   variant="body2"
+                  sx={{ cursor: "pointer" }}
                   onClick={(e) => {
                     if (cat.children.length > 0) {
                       setShow(!show);
